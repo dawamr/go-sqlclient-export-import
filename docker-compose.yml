@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sqlclient-export-import
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./exports:/app/exports
+      - ./uploads:/app/uploads
+    environment:
+      - PORT=3000
+      - ENVIRONMENT=development
+      - MAX_UPLOAD_SIZE=52428800
+      - EXPORT_DIR=/app/exports
+      - UPLOAD_DIR=/app/uploads
+      - TEMPLATE_DIR=/app/internal/templates
+      - STATIC_DIR=/app/static
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 
