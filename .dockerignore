@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Exported files and uploads
+exports/*
+uploads/*
+
+# Environment variables
+.env
+.env.*
+
+# Build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories (remove if using vendor)
+# vendor/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo 
